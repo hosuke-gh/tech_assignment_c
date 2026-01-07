@@ -25,7 +25,7 @@ docker run -p 8000:8000 animal-picture-app-python
 ----
 POST /pictures
 {
-"animal": "cat",
+"animal": "dog",
 "count": 2
 }
 
@@ -36,5 +36,16 @@ GET /pictures/{animal}/last
 http://localhost:8000/docs
 """
 
-## Test
+## Test the fetch API call
 ----
+source venv/bin/activate
+pytest
+
+## For future test expansion
+Add nominal case test for POST call
+Add multiple animals of the same type for POST call
+Add invalid animal for POST call
+Add index overflow for GET call
+
+## For even further future expansion
+Port to Java
