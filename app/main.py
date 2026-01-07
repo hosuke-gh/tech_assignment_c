@@ -2,7 +2,6 @@
 # main.py
 # ============================
 from fastapi import FastAPI, Depends, HTTPException
-from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 from typing import List
 
@@ -17,7 +16,8 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(title="Animal Picture API")
 
 # needed to serve the web interface
-app.mount("/", StaticFiles(directory="app/static", html=True), name="static")
+from fastapi.staticfiles import StaticFiles
+app.mount("/ui", StaticFiles(directory="app/static", html=True), name="ui")
 
 
 def get_db():
