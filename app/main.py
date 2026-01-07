@@ -3,11 +3,12 @@
 # ============================
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from database import SessionLocal, engine
-from models import Base, AnimalPicture
-from schemas import PictureRequest, PictureResponse
-from service import generate_url
 from typing import List
+
+from app.database import SessionLocal, engine
+from app.models import Base, AnimalPicture
+from app.schemas import PictureRequest, PictureResponse
+from app.service import generate_url
 
 Base.metadata.create_all(bind=engine)
 

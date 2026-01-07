@@ -2,7 +2,7 @@
 # service.py
 # ============================
 import random
-from models import AnimalPicture
+from app.models import AnimalPicture
 
 
 def generate_url(animal: str) -> str:
